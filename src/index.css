@@ -1,0 +1,208 @@
+/* ============================================
+   GLOBAL DESIGN SYSTEM
+   Najir Ahamed Portfolio
+   ============================================ */
+
+:root {
+    /* Color Palette */
+    --color-bg-primary: #080c14;
+    --color-bg-secondary: #0d1422;
+    --color-bg-card: #111827;
+    --color-bg-card-hover: #141f35;
+    --color-border: rgba(108, 99, 255, 0.15);
+    --color-border-hover: rgba(108, 99, 255, 0.4);
+
+    /* Brand Colors */
+    --color-accent: #6c63ff;
+    --color-accent-light: #8b84ff;
+    --color-accent-dark: #5046e5;
+    --color-accent-2: #00d4aa;
+    --color-accent-glow: rgba(108, 99, 255, 0.25);
+
+    /* Text Colors */
+    --color-text-primary: #f0f4ff;
+    --color-text-secondary: #a0aec0;
+    --color-text-muted: #718096;
+
+    /* Gradients */
+    --gradient-accent: linear-gradient(135deg, #6c63ff 0%, #00d4aa 100%);
+    --gradient-hero: radial-gradient(ellipse at 60% 0%, rgba(108, 99, 255, 0.2) 0%, transparent 60%),
+        radial-gradient(ellipse at 10% 80%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
+        #080c14;
+    --gradient-card: linear-gradient(145deg, #111827 0%, #0f1d30 100%);
+    --gradient-text: linear-gradient(135deg, #ffffff 0%, #a0aec0 100%);
+
+    /* Typography */
+    --font-primary: 'Outfit', 'Inter', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+
+    /* Spacing */
+    --section-padding: 100px 0;
+    --container-max: 1200px;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* Shadows */
+    --shadow-card: 0 4px 30px rgba(0, 0, 0, 0.4);
+    --shadow-accent: 0 0 40px rgba(108, 99, 255, 0.25);
+    --shadow-button: 0 8px 32px rgba(108, 99, 255, 0.35);
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 16px;
+}
+
+.section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--gradient-accent);
+    border-radius: 2px;
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: clamp(1.75rem, 6vw, 3rem);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.section-title span {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-subtitle {
+    font-size: 1.05rem;
+    color: var(--color-text-secondary);
+    max-width: 560px;
+    line-height: 1.8;
+}
+
+/* Fade-in animation utility */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.7s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent-dark);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+}
+
+/* ============================================
+   SELECTION
+   ============================================ */
+
+::selection {
+    background: rgba(108, 99, 255, 0.35);
+    color: #fff;
+}

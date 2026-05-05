@@ -1,0 +1,21 @@
+/* ============================================================
+   APP / SECTION SHARED STYLES
+   ============================================================ */
+
+/* Section base class */
+.section {
+    position: relative;
+}
+
+/* Smooth scrolling offset for fixed navbar */
+[id] {
+    scroll-margin-top: 80px;
+}
+
+/* Global button reset / focus styles */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
